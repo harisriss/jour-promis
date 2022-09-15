@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/jour-promis/static/css/main.23dcd904.css",
-    "main.js": "/jour-promis/static/js/main.2a061f47.js",
+    "main.js": "/jour-promis/static/js/main.8d7a71f0.js",
     "static/js/787.5c175201.chunk.js": "/jour-promis/static/js/787.5c175201.chunk.js",
     "index.html": "/jour-promis/index.html",
     "main.23dcd904.css.map": "/jour-promis/static/css/main.23dcd904.css.map",
-    "main.2a061f47.js.map": "/jour-promis/static/js/main.2a061f47.js.map",
+    "main.8d7a71f0.js.map": "/jour-promis/static/js/main.8d7a71f0.js.map",
     "787.5c175201.chunk.js.map": "/jour-promis/static/js/787.5c175201.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.23dcd904.css",
-    "static/js/main.2a061f47.js"
+    "static/js/main.8d7a71f0.js"
   ]
 }
