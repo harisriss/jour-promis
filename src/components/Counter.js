@@ -12,6 +12,7 @@ const Counter = () => {
     const handlePause = () => clockRef.current.pause();
     // State
     const [nbMsRemaining, setNbMsRemaining] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
     const [date, setDate] = useState(moment());
     const [isInClass, setIsInClass] = useState(false)
 
@@ -26,7 +27,8 @@ const Counter = () => {
             .then(response => {
                 setNbMsRemaining(response.timeRemainMs)
                 setDate(moment().add(response.timeRemainMs, "milliseconds").toDate())
-                setIsInClass(response.isInClass);
+                setIsInClass(response.isInClass)
+                setIsLoading(false)
                 if (response.isInClass) {
                     handleStart()
                 } else {
@@ -36,7 +38,7 @@ const Counter = () => {
     };
     useEffect(() => {
         fetchTimeRemaining()
-        let intervalID = setInterval(() => fetchTimeRemaining, 1000*60)
+        let intervalID = setInterval(() => fetchTimeRemaining, 1000 * 60)
         return clearInterval(intervalID)
     }, [])
 
@@ -45,7 +47,7 @@ const Counter = () => {
 
         return (
             <div>
-                <div className="counter-container" >
+                <div className="counter-container">
                     <span className="subcontainer">
                         <p className="nombre">{days}</p> <p className="details">jours</p>
                     </span>
@@ -72,8 +74,10 @@ const Counter = () => {
             </div>
         );
     };
-
-    return (
+    if (isLoading) {
+        return null;
+    }
+        return (
         <Countdown renderer={renderer} date={Date.now() + nbMsRemaining} intervalDelay={0} autoStart={false}
                    ref={clockRef} className="countdown"/>
     )
