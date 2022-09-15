@@ -1,9 +1,11 @@
 {
   "name": "liberer-delivrer",
   "version": "0.1.0",
-  "homepage": "https://harisriss.github.io/liberer-delivrer",
+  "homepage": "https://harisriss.github.io/jour-promis",
   "private": true,
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.9",
+    "@chakra-ui/react": "^2.3.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "production -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,9 +45,6 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.9",
-    "gh-pages": "^4.0.0",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "gh-pages": "^4.0.0"
   }
 }

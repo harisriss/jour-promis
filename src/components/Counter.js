@@ -45,7 +45,7 @@ const Counter = () => {
 
         return (
             <div>
-                <div className="counter-container">
+                <div className="counter-container" >
                     <span className="subcontainer">
                         <p className="nombre">{days}</p> <p className="details">jours</p>
                     </span>
