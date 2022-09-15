@@ -1,5 +1,5 @@
 import '../style/Counter.scss'
-import {useEffect, useRef, useState} from "react";
+import {createRef, useEffect, useRef, useState} from "react";
 import moment from "moment"
 import Countdown from "react-countdown";
 
@@ -7,7 +7,7 @@ import Countdown from "react-countdown";
  * display the remaining time
  */
 const Counter = () => {
-    const clockRef = useRef();
+    const clockRef = createRef();
     const handleStart = () => clockRef.current.start();
     const handlePause = () => clockRef.current.pause();
     // State
@@ -29,11 +29,14 @@ const Counter = () => {
                 setDate(moment().add(response.timeRemainMs, "milliseconds").toDate())
                 setIsInClass(response.isInClass)
                 setIsLoading(false)
-                if (response.isInClass) {
-                    handleStart()
-                } else {
-                    handlePause()
-                }
+                setTimeout (
+                    () => {
+                        if (!response.isInClass) {
+                            handlePause()
+                        }
+                    }, 800
+                )
+
             })
     };
     useEffect(() => {
@@ -78,7 +81,7 @@ const Counter = () => {
         return null;
     }
         return (
-        <Countdown renderer={renderer} date={Date.now() + nbMsRemaining} intervalDelay={0} autoStart={false}
+        <Countdown renderer={renderer} date={Date.now() + nbMsRemaining} intervalDelay={0} autoStart={true}
                    ref={clockRef} className="countdown"/>
     )
 }
