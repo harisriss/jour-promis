@@ -6,4 +6,20 @@
   padding: 15px 0;
   text-align: center;
   bottom: 0;
+
+}
+
+.underdecoration {
+  &:hover {
+    animation: underdecorationanimation 10s ;
+
+  }
+  @keyframes underdecorationanimation {
+    0% {
+      color: transparent;
+    }
+    100% {
+      color: inherit;
+    }
+  }
 }

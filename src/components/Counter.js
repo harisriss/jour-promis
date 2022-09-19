@@ -1,5 +1,5 @@
 import '../style/Counter.scss'
-import {createRef, useEffect, useRef, useState} from "react";
+import {createRef, useEffect, useState} from "react";
 import moment from "moment"
 import Countdown from "react-countdown";
 
@@ -26,8 +26,8 @@ const Counter = () => {
             })
             .then(response => {
                 setNbMsRemaining(response.timeRemainMs)
-                setDate(moment().add(response.timeRemainMs, "milliseconds").toDate())
-                setIsInClass(response.isInClass)
+                // setDate(moment().add(response.timeRemainMs, "milliseconds").toDate())
+                // setIsInClass(response.isInClass)
                 setIsLoading(false)
                 setTimeout (
                     () => {

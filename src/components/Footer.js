@@ -1,6 +1,6 @@
 import '../style/Footer.scss'
 import moment from "moment"
-import {Box, useColorModeValue} from "@chakra-ui/react";
+import {Box, Link, useColorModeValue} from "@chakra-ui/react";
 
 /**
  * display the remaining time
@@ -12,9 +12,13 @@ const Footer = () => {
 
     moment.locale('fr');
     return (
-        <Box as="footer" className="footer">
-            Nous sommes le {moment().format('LL')}
-        </Box>
+        <div>
+            <Box as="footer" className="footer" display="flex" justifyContent="space-around">
+                <p>Nous sommes le {moment().format('LL')}</p>
+                <a href="https://singe.life" className="underdecoration" target="_blank">Admin Panel</a>
+            </Box>
+
+        </div>
 
     )
 }
