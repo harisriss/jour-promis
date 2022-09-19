@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/jour-promis/static/css/main.23dcd904.css",
-    "main.js": "/jour-promis/static/js/main.e5f4224f.js",
+    "main.css": "/jour-promis/static/css/main.b3e130cb.css",
+    "main.js": "/jour-promis/static/js/main.58ead22d.js",
     "static/js/787.5c175201.chunk.js": "/jour-promis/static/js/787.5c175201.chunk.js",
     "static/media/Bamso.mp3": "/jour-promis/static/media/Bamso.1123092e240e4e43c13b.mp3",
+    "static/media/cursor.svg": "/jour-promis/static/media/cursor.03eab9d05c6f8ffdfbd6.svg",
     "index.html": "/jour-promis/index.html",
-    "main.23dcd904.css.map": "/jour-promis/static/css/main.23dcd904.css.map",
-    "main.e5f4224f.js.map": "/jour-promis/static/js/main.e5f4224f.js.map",
+    "main.b3e130cb.css.map": "/jour-promis/static/css/main.b3e130cb.css.map",
+    "main.58ead22d.js.map": "/jour-promis/static/js/main.58ead22d.js.map",
     "787.5c175201.chunk.js.map": "/jour-promis/static/js/787.5c175201.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.23dcd904.css",
-    "static/js/main.e5f4224f.js"
+    "static/css/main.b3e130cb.css",
+    "static/js/main.58ead22d.js"
   ]
 }
