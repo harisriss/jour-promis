@@ -13,8 +13,6 @@ const Counter = () => {
     // State
     const [nbMsRemaining, setNbMsRemaining] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
-    const [date, setDate] = useState(moment());
-    const [isInClass, setIsInClass] = useState(false)
 
     /**
      * fetch the remaining time + isInClass and setIsInClass
@@ -26,12 +24,11 @@ const Counter = () => {
             })
             .then(response => {
                 setNbMsRemaining(response.timeRemainMs)
-                // setDate(moment().add(response.timeRemainMs, "milliseconds").toDate())
-                // setIsInClass(response.isInClass)
                 setIsLoading(false)
-                setTimeout (
-                    () => {
-                        if (!response.isInClass) {
+                setTimeout (() => {
+                        if (response.isInClass) {
+                            handleStart()
+                        } else {
                             handlePause()
                         }
                     }, 800
@@ -81,7 +78,7 @@ const Counter = () => {
         return null;
     }
         return (
-        <Countdown renderer={renderer} date={Date.now() + nbMsRemaining} intervalDelay={0} autoStart={true}
+        <Countdown renderer={renderer} date={Date.now() + nbMsRemaining} intervalDelay={0} autoStart={false}
                    ref={clockRef} className="countdown"/>
     )
 }
