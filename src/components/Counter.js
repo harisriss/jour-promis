@@ -28,8 +28,6 @@ const Counter = () => {
                 setTimeout (() => {
                         if (response.isInClass) {
                             handleStart()
-                        } else {
-                            handlePause()
                         }
                     }, 800
                 )
