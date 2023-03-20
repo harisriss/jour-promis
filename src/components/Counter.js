@@ -1,6 +1,5 @@
 import '../style/Counter.scss'
 import {createRef, useEffect, useState} from "react";
-import moment from "moment"
 import Countdown from "react-countdown";
 
 /**
@@ -13,7 +12,7 @@ const Counter = () => {
     // State
     const [nbMsRemaining, setNbMsRemaining] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
-
+    const [timeLeft, setTimeLeft] = useState(0);
     /**
      * fetch the remaining time + isInClass and setIsInClass
      */
@@ -25,20 +24,22 @@ const Counter = () => {
             .then(response => {
                 setNbMsRemaining(response.timeRemainMs)
                 setIsLoading(false)
-                setTimeout (() => {
+                const interval = setTimeout (() => {
                         if (response.isInClass) {
                             handleStart()
                         }
-                    }, 800
+                    }, 1000
                 )
+            setTimeLeft(interval)
+            return () => clearInterval(interval);
 
             })
     };
     useEffect(() => {
         fetchTimeRemaining()
-        let intervalID = setInterval(() => fetchTimeRemaining, 1000 * 60)
+        let intervalID = setInterval(() => fetchTimeRemaining, 1000)
         return clearInterval(intervalID)
-    }, [])
+    }, [timeLeft])
 
     const renderer = ({formatted}) => {
         const {days, hours, minutes, seconds} = formatted;

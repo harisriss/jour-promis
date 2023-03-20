@@ -1,6 +1,6 @@
 import '../style/Footer.scss'
 import moment from "moment"
-import {Box, Link, useColorModeValue} from "@chakra-ui/react";
+import {Box, useColorModeValue} from "@chakra-ui/react";
 
 /**
  * display the remaining time
@@ -8,7 +8,6 @@ import {Box, Link, useColorModeValue} from "@chakra-ui/react";
  * @constructor
  */
 const Footer = () => {
-    const linkHoverColor = useColorModeValue('white', 'white');
 
     moment.locale('fr');
     return (
